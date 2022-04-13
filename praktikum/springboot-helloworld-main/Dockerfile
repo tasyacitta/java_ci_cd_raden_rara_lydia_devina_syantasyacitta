@@ -1,14 +1,5 @@
-# Import base JDK from Linux
 FROM adoptopenjdk/openjdk11:alpine
-
-# Set work directory
-WORKDIR /app
-
-# Copy application files
-COPY target/*.jar app.jar
-
-# Expose PORT
+ARG JAR_FILE='./praktikum/springboot-helloworld-main/target/*.jar'
+COPY ${JAR_FILE} /app.jar
 EXPOSE 8080
-
-# Run application
 ENTRYPOINT ["java", "-jar", "app.jar"]
