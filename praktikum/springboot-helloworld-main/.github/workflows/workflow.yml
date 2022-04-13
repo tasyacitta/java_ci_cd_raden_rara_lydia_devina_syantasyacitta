@@ -26,7 +26,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Maven Clean Verify
         run: |
-          cd 'java_alterra_raden_rara_lydia_devina_syantasyacitta/praktikum/springboot-helloworld-main'
+          cd 'praktikum/springboot-helloworld-main'
           mvn clean verify
 
   build:
@@ -47,7 +47,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run Test
         run: |
-          cd 'java_alterra_raden_rara_lydia_devina_syantasyacitta/praktikum/springboot-helloworld-main'
+          cd 'praktikum/springboot-helloworld-main'
           mvn clean package -Dmaven.test.skip=true
       - name: Login to docker hub
         uses: docker/login-action@v1
