@@ -58,7 +58,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
-          files: './praktikum/springboot-helloworld-main/Dockerfile'
+          files: './praktikum/springboot-helloworld-main/dep.Dockerfile'
           context: .
           push: true
           tags: tasyacitta/springboot-helloworld:latest
