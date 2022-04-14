@@ -35,7 +35,7 @@ jobs:
           java-version: 11
           distribution: 'adopt'
       - name: Maven Build
-        uses: mvn clean package -Dmaven.test.skip=true
+        run: mvn clean package -Dmaven.test.skip=true
       - name: Login to docker hub
         uses: docker/login-action@v1
         with:
@@ -47,7 +47,7 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/CICD:latest
-          
+
   deployment:
       name: Deploy Container
       runs-on: ubuntu-latest
