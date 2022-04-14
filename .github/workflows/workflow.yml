@@ -26,7 +26,6 @@ jobs:
     name: Build Package
     runs-on: ubuntu-18.04
     needs: run_test
-
     steps:
       - run: echo "Starting execute unit test"
       - uses: actions/checkout@v3
@@ -48,6 +47,7 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/CICD:latest
+          
   deployment:
       name: Deploy Container
       runs-on: ubuntu-latest
