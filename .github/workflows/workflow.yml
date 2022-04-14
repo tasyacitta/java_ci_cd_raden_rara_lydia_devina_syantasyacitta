@@ -59,7 +59,7 @@ jobs:
             host: ${{ secrets.SSH_HOST }}
             port: 22
             username: ${{ secrets.SSH_USERNAME }}
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            key: ${{ secrets.SSH_SECRET_KEY }}
             script: |
               docker stop springboot-helloworld:latest
               docker rml tasyacitta/springboot-helloworld:latest
