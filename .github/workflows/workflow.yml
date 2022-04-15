@@ -44,7 +44,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: elvirareza/springboot-helloworld:latest
+          tags: tasyacitta/springboot-helloworld:latest
   deployment:
      name: Deploy container using SSH
      runs-on: ubuntu-latest
