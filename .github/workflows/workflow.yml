@@ -53,6 +53,17 @@ jobs:
       runs-on: ubuntu-latest
       needs: build
       steps:
+        - name: echo "Starting deploy container"
+          uses: actions/checkout@v3
+        - name: copy file via ssh key
+          uses: appleboy/scp-action@master
+          with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            port: 22
+            key: ${{ secrets.SSH_SECRET_KEY }}
+            source: .dev.env
+            target: /home/${{ secrets.SSH_USERNAME }}
         - name: Deploy using ssh
           uses: appleboy/ssh-action@master
           with:
