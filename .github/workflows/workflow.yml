@@ -72,7 +72,7 @@ jobs:
             docker stop springboot-helloworld
             docker rmi tasyacitta/springboot-helloworld:latest
             docker pull tasyacitta/springboot-helloworld:latest
-            docker run -d --rm --name springboot-helloworld -p 80:8080--env-file .dev.env --network my_network tasyacitta/springboot-helloworld:latest
+            docker run -d --rm --name springboot-helloworld -p 80:8080 --env-file .dev.env --network my_network tasyacitta/springboot-helloworld:latest
 
           
 
