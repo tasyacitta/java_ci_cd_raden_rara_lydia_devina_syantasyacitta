@@ -72,11 +72,11 @@ jobs:
             username: ${{ secrets.SSH_USERNAME }}
             key: ${{ secrets.SSH_SECRET_KEY }}
             script: |
-              docker stop springboot-helloworld:latest
+              docker stop springboot-helloworld
               docker rmi tasyacitta/springboot-helloworld:latest
               docker pull tasyacitta/springboot-helloworld:latest
               docker start postgres
-              docker run -d --rm --name springboot-helloworld -p 80:8080 --env-file=.dev.env --network my_network tasyacitta/springboot-helloworld:latest
+              docker run -d --rm --name springboot-helloworld -p 80:8080 --env-file=dev.env --network my_network tasyacitta/springboot-helloworld:latest
              
           
 
